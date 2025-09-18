@@ -1,0 +1,9 @@
+dev:
+	air
+
+run:
+	go run ./cmd/server
+
+migrate:
+	psql "$$DATABASE_URL" -f migrations/0001_init.sql
+	psql "$$DATABASE_URL" -f migrations/0002_seed.sql
