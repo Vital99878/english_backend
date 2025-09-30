@@ -3,10 +3,12 @@ package handlers
 import (
 	"context"
 	"encoding/json"
+	"fmt"
 	"net/http"
 
 	"english-backend/internal/repo"
 	"english-backend/internal/service"
+
 	"github.com/go-chi/chi/v5"
 )
 
@@ -26,6 +28,7 @@ func (h *ExerciseHandlers) GetExercise(w http.ResponseWriter, r *http.Request) {
 	ctx := r.Context()
 
 	ex, err := h.Repo.GetExerciseByID(ctx, id)
+	fmt.Println(ex)
 	if err != nil {
 		http.Error(w, "not found", http.StatusNotFound)
 		return
@@ -34,8 +37,8 @@ func (h *ExerciseHandlers) GetExercise(w http.ResponseWriter, r *http.Request) {
 }
 
 type submitReq struct {
-	ExerciseID string            `json:"exercise_id"`
-	Answers    map[string]string `json:"answers"`
+	ExerciseID string            `json:"id"`
+	Answers    map[string]string `json:"fields"`
 }
 
 func (h *ExerciseHandlers) SubmitCloze(w http.ResponseWriter, r *http.Request) {
@@ -50,11 +53,12 @@ func (h *ExerciseHandlers) SubmitCloze(w http.ResponseWriter, r *http.Request) {
 	}
 
 	ctx := r.Context()
-	ex, err := h.Repo.GetExerciseByID(ctx, req.ExerciseID)
+	ex, err := h.Repo.GetExerciseByID(ctx, "37455260-afc2-4d0a-a0c7-d83709c7beb5")
 	if err != nil {
 		http.Error(w, "exercise not found", http.StatusNotFound)
 		return
 	}
+	fmt.Println(ex.Payload, req.Answers)
 
 	result := service.CheckCloze(ex.Payload, req.Answers)
 
