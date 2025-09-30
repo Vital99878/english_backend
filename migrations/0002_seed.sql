@@ -3,10 +3,10 @@ VALUES (
   'cloze',
   'Complete: "Yesterday I ___ to school and ___ my homework."',
   '{
-    "text": "Yesterday I __b1__ to school and __b2__ my homework.",
+    "text": "He is {{a1}} engineer. I go to {{a2|∅}} work.",
     "blanks": [
-      { "id": "b1", "accept": ["went"], "caseSensitive": false },
-      { "id": "b2", "accept": ["did", "finished"], "caseSensitive": false }
+      { "id": "a1", "accept": ["an"], "caseSensitive": false },
+      { "id": "a2", "accept": ["the"], "caseSensitive": false }
     ]
   }'::jsonb
 )
