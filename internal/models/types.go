@@ -1,9 +1,8 @@
 package models
 
 type ClozeBlank struct {
-	ID            string   `json:"id"`
-	Accept        []string `json:"accept"`
-	CaseSensitive bool     `json:"caseSensitive"`
+	ID     string   `json:"id"`
+	Accept []string `json:"accept"`
 }
 
 type ClozePayload struct {
@@ -14,7 +13,6 @@ type ClozePayload struct {
 type Exercise struct {
 	ID      string       `json:"id"`
 	Kind    string       `json:"kind"`
-	Prompt  string       `json:"prompt"`
 	Payload ClozePayload `json:"payload"`
 }
 

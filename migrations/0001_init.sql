@@ -1,9 +1,7 @@
-CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
-
+DROP TABLE exercises;
 CREATE TABLE IF NOT EXISTS exercises (
   id BIGSERIAL PRIMARY KEY,
   kind TEXT NOT NULL CHECK (kind IN ('cloze')),
-  prompt TEXT NOT NULL,
   payload JSONB NOT NULL,
   created_at TIMESTAMPTZ NOT NULL DEFAULT now()
 );
