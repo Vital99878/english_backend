@@ -37,7 +37,7 @@ func CheckCloze(payload models.ClozePayload, answers map[string]string) models.C
 		given := answers[b.ID]
 		ok := false
 		for _, acc := range b.Accept {
-			if eq(given, acc, b.CaseSensitive) {
+			if eq(given, acc, true) {
 				ok = true
 				break
 			}

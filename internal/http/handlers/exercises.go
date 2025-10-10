@@ -3,13 +3,16 @@ package handlers
 import (
 	"context"
 	"encoding/json"
-	"fmt"
+	"errors"
+	"log"
 	"net/http"
+	"time"
+
+	"github.com/go-chi/chi/v5"
+	"github.com/jackc/pgx/v5"
 
 	"english-backend/internal/repo"
 	"english-backend/internal/service"
-
-	"github.com/go-chi/chi/v5"
 )
 
 type ExerciseHandlers struct {
@@ -23,48 +26,87 @@ func (h *ExerciseHandlers) Register(r *chi.Mux) {
 	})
 }
 
+// небольшая утилита для безопасного логирования JSON
+func toJSON(v any) string {
+	b, _ := json.Marshal(v)
+	return string(b)
+}
+
 func (h *ExerciseHandlers) GetExercise(w http.ResponseWriter, r *http.Request) {
+	start := time.Now()
 	id := chi.URLParam(r, "id")
 	ctx := r.Context()
 
+	log.Printf("[GetExercise] id=%s BEGIN", id)
 	ex, err := h.Repo.GetExerciseByID(ctx, id)
-	fmt.Println(ex)
 	if err != nil {
-		http.Error(w, "not found", http.StatusNotFound)
+		if errors.Is(err, pgx.ErrNoRows) {
+			log.Printf("[GetExercise] id=%s NOT_FOUND (%v) dur=%s", id, err, time.Since(start))
+			http.Error(w, "not found", http.StatusNotFound)
+			return
+		}
+		log.Printf("[GetExercise] id=%s DB_ERR=%v dur=%s", id, err, time.Since(start))
+		http.Error(w, "db error", http.StatusInternalServerError)
 		return
 	}
+
+	// Логируем ключевые поля, payload — коротко
+	log.Printf("[GetExercise] id=%s OK kind=%s prompt=%q payload=%s dur=%s",
+		id, ex.Kind, toJSON(ex.Payload), time.Since(start))
+
 	writeJSON(w, ex, http.StatusOK)
 }
 
 type submitReq struct {
-	ExerciseID string            `json:"id"`
+	ExerciseID string            `json:"exercise_id"` // <-- фикс: правильное имя поля
 	Answers    map[string]string `json:"answers"`
 }
 
 func (h *ExerciseHandlers) SubmitCloze(w http.ResponseWriter, r *http.Request) {
+	start := time.Now()
+
 	var req submitReq
 	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
+		log.Printf("[SubmitCloze] BAD_JSON err=%v", err)
 		http.Error(w, "bad json", http.StatusBadRequest)
 		return
 	}
+	log.Printf("[SubmitCloze] IN exercise_id=%s answers=%s", req.ExerciseID, toJSON(req.Answers))
+
 	if req.ExerciseID == "" || !service.IsAnswersShapeValid(req.Answers) {
+		log.Printf("[SubmitCloze] INVALID_PAYLOAD exercise_id=%q answers=%s", req.ExerciseID, toJSON(req.Answers))
 		http.Error(w, "invalid payload", http.StatusBadRequest)
 		return
 	}
 
 	ctx := r.Context()
-	ex, err := h.Repo.GetExerciseByID(ctx, "37455260-afc2-4d0a-a0c7-d83709c7beb5")
+	ex, err := h.Repo.GetExerciseByID(ctx, req.ExerciseID)
 	if err != nil {
-		http.Error(w, "exercise not found", http.StatusNotFound)
+		if errors.Is(err, pgx.ErrNoRows) {
+			log.Printf("[SubmitCloze] NOT_FOUND exercise_id=%s dur=%s", req.ExerciseID, time.Since(start))
+			http.Error(w, "exercise not found", http.StatusNotFound)
+			return
+		}
+		log.Printf("[SubmitCloze] DB_ERR exercise_id=%s err=%v", req.ExerciseID, err)
+		http.Error(w, "db error", http.StatusInternalServerError)
 		return
 	}
-	fmt.Println(ex.Payload, req.Answers)
+
+	log.Printf("[SubmitCloze] EX_LOADED id=%s kind=%s payload=%s",
+		ex.ID, ex.Kind, toJSON(ex.Payload))
 
 	result := service.CheckCloze(ex.Payload, req.Answers)
+	log.Printf("[SubmitCloze] CHECK_RESULT score=%.2f details=%s",
+		result.Score, toJSON(result.Details))
 
-	// Save submission (best-effort; errors ignored for simplicity)
-	_ = h.Repo.SaveSubmission(context.Background(), ex.ID, req.Answers, result.Score, result)
+	// best-effort сохранение
+	if err := h.Repo.SaveSubmission(context.Background(), ex.ID, req.Answers, result.Score, result); err != nil {
+		log.Printf("[SubmitCloze] SAVE_ERR exercise_id=%s err=%v", ex.ID, err)
+	} else {
+		log.Printf("[SubmitCloze] SAVE_OK exercise_id=%s", ex.ID)
+	}
 
+	log.Printf("[SubmitCloze] OK dur=%s", time.Since(start))
 	writeJSON(w, result, http.StatusOK)
 }
 

@@ -4,6 +4,7 @@ import (
 	"context"
 	"encoding/json"
 	"errors"
+	"fmt"
 
 	"english-backend/internal/models"
 	"github.com/jackc/pgx/v5/pgxpool"
@@ -16,10 +17,11 @@ type ExerciseRepo struct {
 func NewExerciseRepo(db *pgxpool.Pool) *ExerciseRepo { return &ExerciseRepo{db: db} }
 
 func (r *ExerciseRepo) GetExerciseByID(ctx context.Context, id string) (*models.Exercise, error) {
-	row := r.db.QueryRow(ctx, `SELECT id, kind, prompt, payload FROM exercises WHERE id=$1`, id)
+	row := r.db.QueryRow(ctx, `SELECT id, kind, payload FROM exercises WHERE id=$1`, id)
+	fmt.Println(row)
 	var e models.Exercise
 	var raw []byte
-	if err := row.Scan(&e.ID, &e.Kind, &e.Prompt, &raw); err != nil {
+	if err := row.Scan(&e.ID, &e.Kind, &raw); err != nil {
 		return nil, err
 	}
 	if err := json.Unmarshal(raw, &e.Payload); err != nil {
