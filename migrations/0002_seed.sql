@@ -7,14 +7,14 @@ VALUES (
     "blanks": [
       {
         "id": "a1",
-        "accept": [
+        "answers": [
           "the"
         ],
         "caseSensitive": false
       },
       {
         "id": "a2",
-        "accept": [
+        "answers": [
           "the"
         ],
         "caseSensitive": false
@@ -31,14 +31,14 @@ VALUES (
     "blanks": [
       {
         "id": "a1",
-        "accept": [
+        "answers": [
           "an"
         ],
         "caseSensitive": false
       },
       {
         "id": "a2",
-        "accept": [
+        "answers": [
           "the"
         ],
         "caseSensitive": false
@@ -56,14 +56,14 @@ VALUES (
     "blanks": [
       {
         "id": "a1",
-        "accept": [
+        "answers": [
           ""
         ],
         "caseSensitive": false
       },
       {
         "id": "a2",
-        "accept": [
+        "answers": [
           "the"
         ],
         "caseSensitive": false
@@ -81,14 +81,14 @@ VALUES (
     "blanks": [
       {
         "id": "a1",
-        "accept": [
+        "answers": [
           "an"
         ],
         "caseSensitive": false
       },
       {
         "id": "a2",
-        "accept": [
+        "answers": [
           "the"
         ],
         "caseSensitive": false
@@ -106,14 +106,14 @@ VALUES (
     "blanks": [
       {
         "id": "a1",
-        "accept": [
+        "answers": [
           "an"
         ],
         "caseSensitive": false
       },
       {
         "id": "a2",
-        "accept": [
+        "answers": [
           ""
         ],
         "caseSensitive": false
@@ -131,14 +131,14 @@ VALUES (
     "blanks": [
       {
         "id": "a1",
-        "accept": [
+        "answers": [
           "a"
         ],
         "caseSensitive": false
       },
       {
         "id": "a2",
-        "accept": [
+        "answers": [
           "the"
         ],
         "caseSensitive": false
@@ -156,14 +156,14 @@ VALUES (
     "blanks": [
       {
         "id": "a1",
-        "accept": [
+        "answers": [
           "a"
         ],
         "caseSensitive": false
       },
       {
         "id": "a2",
-        "accept": [
+        "answers": [
           "the"
         ],
         "caseSensitive": false
@@ -181,14 +181,14 @@ VALUES (
     "blanks": [
       {
         "id": "a1",
-        "accept": [
+        "answers": [
           "the"
         ],
         "caseSensitive": false
       },
       {
         "id": "a2",
-        "accept": [
+        "answers": [
           "the"
         ],
         "caseSensitive": false
@@ -206,14 +206,14 @@ VALUES (
     "blanks": [
       {
         "id": "a1",
-        "accept": [
+        "answers": [
           "an"
         ],
         "caseSensitive": false
       },
       {
         "id": "a2",
-        "accept": [
+        "answers": [
           "the"
         ],
         "caseSensitive": false
@@ -231,14 +231,14 @@ VALUES (
     "blanks": [
       {
         "id": "a1",
-        "accept": [
+        "answers": [
           ""
         ],
         "caseSensitive": false
       },
       {
         "id": "a2",
-        "accept": [
+        "answers": [
           "a"
         ],
         "caseSensitive": false
@@ -256,14 +256,14 @@ VALUES (
     "blanks": [
       {
         "id": "a1",
-        "accept": [
+        "answers": [
           "the"
         ],
         "caseSensitive": false
       },
       {
         "id": "a2",
-        "accept": [
+        "answers": [
           "the"
         ],
         "caseSensitive": false
@@ -281,14 +281,14 @@ VALUES (
     "blanks": [
       {
         "id": "a1",
-        "accept": [
+        "answers": [
           "a"
         ],
         "caseSensitive": false
       },
       {
         "id": "a2",
-        "accept": [
+        "answers": [
           "the"
         ],
         "caseSensitive": false
@@ -306,14 +306,14 @@ VALUES (
     "blanks": [
       {
         "id": "a1",
-        "accept": [
+        "answers": [
           "an"
         ],
         "caseSensitive": false
       },
       {
         "id": "a2",
-        "accept": [
+        "answers": [
           "the"
         ],
         "caseSensitive": false
@@ -331,14 +331,14 @@ VALUES (
     "blanks": [
       {
         "id": "a1",
-        "accept": [
+        "answers": [
           "the"
         ],
         "caseSensitive": false
       },
       {
         "id": "a2",
-        "accept": [
+        "answers": [
           ""
         ],
         "caseSensitive": false
@@ -356,14 +356,14 @@ VALUES (
     "blanks": [
       {
         "id": "a1",
-        "accept": [
+        "answers": [
           "an"
         ],
         "caseSensitive": false
       },
       {
         "id": "a2",
-        "accept": [
+        "answers": [
           "a"
         ],
         "caseSensitive": false
@@ -381,14 +381,14 @@ VALUES (
     "blanks": [
       {
         "id": "a1",
-        "accept": [
+        "answers": [
           "the"
         ],
         "caseSensitive": false
       },
       {
         "id": "a2",
-        "accept": [
+        "answers": [
           "the"
         ],
         "caseSensitive": false
@@ -406,14 +406,14 @@ VALUES (
     "blanks": [
       {
         "id": "a1",
-        "accept": [
+        "answers": [
           "an"
         ],
         "caseSensitive": false
       },
       {
         "id": "a2",
-        "accept": [
+        "answers": [
           ""
         ],
         "caseSensitive": false
@@ -431,14 +431,14 @@ VALUES (
     "blanks": [
       {
         "id": "a1",
-        "accept": [
+        "answers": [
           "a"
         ],
         "caseSensitive": false
       },
       {
         "id": "a2",
-        "accept": [
+        "answers": [
           "the"
         ],
         "caseSensitive": false
@@ -456,14 +456,14 @@ VALUES (
     "blanks": [
       {
         "id": "a1",
-        "accept": [
+        "answers": [
           ""
         ],
         "caseSensitive": false
       },
       {
         "id": "a2",
-        "accept": [
+        "answers": [
           "a"
         ],
         "caseSensitive": false
@@ -481,14 +481,14 @@ VALUES (
     "blanks": [
       {
         "id": "a1",
-        "accept": [
+        "answers": [
           "a"
         ],
         "caseSensitive": false
       },
       {
         "id": "a2",
-        "accept": [
+        "answers": [
           "the"
         ],
         "caseSensitive": false
@@ -506,14 +506,14 @@ VALUES (
     "blanks": [
       {
         "id": "a1",
-        "accept": [
+        "answers": [
           ""
         ],
         "caseSensitive": false
       },
       {
         "id": "a2",
-        "accept": [
+        "answers": [
           "the"
         ],
         "caseSensitive": false
@@ -531,14 +531,14 @@ VALUES (
     "blanks": [
       {
         "id": "a1",
-        "accept": [
+        "answers": [
           "a"
         ],
         "caseSensitive": false
       },
       {
         "id": "a2",
-        "accept": [
+        "answers": [
           "a"
         ],
         "caseSensitive": false
@@ -556,7 +556,7 @@ VALUES (
     "blanks": [
       {
         "id": "a1",
-        "accept": [
+        "answers": [
           "the"
         ],
         "caseSensitive": false
@@ -574,14 +574,14 @@ VALUES (
     "blanks": [
       {
         "id": "a1",
-        "accept": [
+        "answers": [
           ""
         ],
         "caseSensitive": false
       },
       {
         "id": "a2",
-        "accept": [
+        "answers": [
           "the"
         ],
         "caseSensitive": false
@@ -599,14 +599,14 @@ VALUES (
     "blanks": [
       {
         "id": "a1",
-        "accept": [
+        "answers": [
           "an"
         ],
         "caseSensitive": false
       },
       {
         "id": "a2",
-        "accept": [
+        "answers": [
           "the"
         ],
         "caseSensitive": false
@@ -624,14 +624,14 @@ VALUES (
     "blanks": [
       {
         "id": "a1",
-        "accept": [
+        "answers": [
           "the"
         ],
         "caseSensitive": false
       },
       {
         "id": "a2",
-        "accept": [
+        "answers": [
           "a"
         ],
         "caseSensitive": false
@@ -649,14 +649,14 @@ VALUES (
     "blanks": [
       {
         "id": "a1",
-        "accept": [
+        "answers": [
           "an"
         ],
         "caseSensitive": false
       },
       {
         "id": "a2",
-        "accept": [
+        "answers": [
           "a"
         ],
         "caseSensitive": false
@@ -674,14 +674,14 @@ VALUES (
     "blanks": [
       {
         "id": "a1",
-        "accept": [
+        "answers": [
           "a"
         ],
         "caseSensitive": false
       },
       {
         "id": "a2",
-        "accept": [
+        "answers": [
           "the"
         ],
         "caseSensitive": false
@@ -699,14 +699,14 @@ VALUES (
     "blanks": [
       {
         "id": "a1",
-        "accept": [
+        "answers": [
           "an"
         ],
         "caseSensitive": false
       },
       {
         "id": "a2",
-        "accept": [
+        "answers": [
           "a"
         ],
         "caseSensitive": false
@@ -724,14 +724,14 @@ VALUES (
     "blanks": [
       {
         "id": "a1",
-        "accept": [
+        "answers": [
           ""
         ],
         "caseSensitive": false
       },
       {
         "id": "a2",
-        "accept": [
+        "answers": [
           ""
         ],
         "caseSensitive": false
@@ -749,14 +749,14 @@ VALUES (
     "blanks": [
       {
         "id": "a1",
-        "accept": [
+        "answers": [
           "a"
         ],
         "caseSensitive": false
       },
       {
         "id": "a2",
-        "accept": [
+        "answers": [
           ""
         ],
         "caseSensitive": false
@@ -774,14 +774,14 @@ VALUES (
     "blanks": [
       {
         "id": "a1",
-        "accept": [
+        "answers": [
           "an"
         ],
         "caseSensitive": false
       },
       {
         "id": "a2",
-        "accept": [
+        "answers": [
           "the"
         ],
         "caseSensitive": false
@@ -799,14 +799,14 @@ VALUES (
     "blanks": [
       {
         "id": "a1",
-        "accept": [
+        "answers": [
           "the"
         ],
         "caseSensitive": false
       },
       {
         "id": "a2",
-        "accept": [
+        "answers": [
           "the"
         ],
         "caseSensitive": false
@@ -824,14 +824,14 @@ VALUES (
     "blanks": [
       {
         "id": "a1",
-        "accept": [
+        "answers": [
           ""
         ],
         "caseSensitive": false
       },
       {
         "id": "a2",
-        "accept": [
+        "answers": [
           ""
         ],
         "caseSensitive": false
@@ -849,14 +849,14 @@ VALUES (
     "blanks": [
       {
         "id": "a1",
-        "accept": [
+        "answers": [
           "a"
         ],
         "caseSensitive": false
       },
       {
         "id": "a2",
-        "accept": [
+        "answers": [
           "a"
         ],
         "caseSensitive": false
@@ -874,14 +874,14 @@ VALUES (
     "blanks": [
       {
         "id": "a1",
-        "accept": [
+        "answers": [
           "an"
         ],
         "caseSensitive": false
       },
       {
         "id": "a2",
-        "accept": [
+        "answers": [
           "a"
         ],
         "caseSensitive": false
@@ -899,14 +899,14 @@ VALUES (
     "blanks": [
       {
         "id": "a1",
-        "accept": [
+        "answers": [
           ""
         ],
         "caseSensitive": false
       },
       {
         "id": "a2",
-        "accept": [
+        "answers": [
           ""
         ],
         "caseSensitive": false
@@ -924,14 +924,14 @@ VALUES (
     "blanks": [
       {
         "id": "a1",
-        "accept": [
+        "answers": [
           "the"
         ],
         "caseSensitive": false
       },
       {
         "id": "a2",
-        "accept": [
+        "answers": [
           "the"
         ],
         "caseSensitive": false
@@ -949,14 +949,14 @@ VALUES (
     "blanks": [
       {
         "id": "a1",
-        "accept": [
+        "answers": [
           "a"
         ],
         "caseSensitive": false
       },
       {
         "id": "a2",
-        "accept": [
+        "answers": [
           ""
         ],
         "caseSensitive": false
@@ -974,14 +974,14 @@ VALUES (
     "blanks": [
       {
         "id": "a1",
-        "accept": [
+        "answers": [
           "a"
         ],
         "caseSensitive": false
       },
       {
         "id": "a2",
-        "accept": [
+        "answers": [
           "a"
         ],
         "caseSensitive": false
@@ -999,14 +999,14 @@ VALUES (
     "blanks": [
       {
         "id": "a1",
-        "accept": [
+        "answers": [
           "an"
         ],
         "caseSensitive": false
       },
       {
         "id": "a2",
-        "accept": [
+        "answers": [
           "the"
         ],
         "caseSensitive": false
@@ -1024,14 +1024,14 @@ VALUES (
     "blanks": [
       {
         "id": "a1",
-        "accept": [
+        "answers": [
           "the"
         ],
         "caseSensitive": false
       },
       {
         "id": "a2",
-        "accept": [
+        "answers": [
           "the"
         ],
         "caseSensitive": false
@@ -1049,14 +1049,14 @@ VALUES (
     "blanks": [
       {
         "id": "a1",
-        "accept": [
+        "answers": [
           "the"
         ],
         "caseSensitive": false
       },
       {
         "id": "a2",
-        "accept": [
+        "answers": [
           "a"
         ],
         "caseSensitive": false
@@ -1074,14 +1074,14 @@ VALUES (
     "blanks": [
       {
         "id": "a1",
-        "accept": [
+        "answers": [
           "an"
         ],
         "caseSensitive": false
       },
       {
         "id": "a2",
-        "accept": [
+        "answers": [
           "the"
         ],
         "caseSensitive": false
@@ -1099,14 +1099,14 @@ VALUES (
     "blanks": [
       {
         "id": "a1",
-        "accept": [
+        "answers": [
           "a"
         ],
         "caseSensitive": false
       },
       {
         "id": "a2",
-        "accept": [
+        "answers": [
           "the"
         ],
         "caseSensitive": false
@@ -1124,14 +1124,14 @@ VALUES (
     "blanks": [
       {
         "id": "a1",
-        "accept": [
+        "answers": [
           ""
         ],
         "caseSensitive": false
       },
       {
         "id": "a2",
-        "accept": [
+        "answers": [
           "a"
         ],
         "caseSensitive": false
@@ -1149,14 +1149,14 @@ VALUES (
     "blanks": [
       {
         "id": "a1",
-        "accept": [
+        "answers": [
           "an"
         ],
         "caseSensitive": false
       },
       {
         "id": "a2",
-        "accept": [
+        "answers": [
           "the"
         ],
         "caseSensitive": false
@@ -1174,14 +1174,14 @@ VALUES (
     "blanks": [
       {
         "id": "a1",
-        "accept": [
+        "answers": [
           "an"
         ],
         "caseSensitive": false
       },
       {
         "id": "a2",
-        "accept": [
+        "answers": [
           "the"
         ],
         "caseSensitive": false
@@ -1199,14 +1199,14 @@ VALUES (
     "blanks": [
       {
         "id": "a1",
-        "accept": [
+        "answers": [
           "a"
         ],
         "caseSensitive": false
       },
       {
         "id": "a2",
-        "accept": [
+        "answers": [
           "the"
         ],
         "caseSensitive": false
@@ -1224,14 +1224,14 @@ VALUES (
     "blanks": [
       {
         "id": "a1",
-        "accept": [
+        "answers": [
           "a"
         ],
         "caseSensitive": false
       },
       {
         "id": "a2",
-        "accept": [
+        "answers": [
           "the"
         ],
         "caseSensitive": false
