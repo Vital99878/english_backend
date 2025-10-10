@@ -58,8 +58,8 @@ func (h *ExerciseHandlers) GetExercise(w http.ResponseWriter, r *http.Request) {
 }
 
 type submitReq struct {
-	ExerciseID string            `json:"exercise_id"` // <-- фикс: правильное имя поля
-	Answers    map[string]string `json:"answers"`
+	Id      string            `json:"id"` // <-- фикс: правильное имя поля
+	Answers map[string]string `json:"answers"`
 }
 
 func (h *ExerciseHandlers) SubmitCloze(w http.ResponseWriter, r *http.Request) {
@@ -71,23 +71,23 @@ func (h *ExerciseHandlers) SubmitCloze(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "bad json", http.StatusBadRequest)
 		return
 	}
-	log.Printf("[SubmitCloze] IN exercise_id=%s answers=%s", req.ExerciseID, toJSON(req.Answers))
+	log.Printf("[SubmitCloze] IN exercise_id=%s answers=%s", req.Id, toJSON(req.Answers))
 
-	if req.ExerciseID == "" || !service.IsAnswersShapeValid(req.Answers) {
-		log.Printf("[SubmitCloze] INVALID_PAYLOAD exercise_id=%q answers=%s", req.ExerciseID, toJSON(req.Answers))
+	if req.Id == "" || !service.IsAnswersShapeValid(req.Answers) {
+		log.Printf("[SubmitCloze] INVALID_PAYLOAD id=%q answers=%s", req.Id, toJSON(req.Answers))
 		http.Error(w, "invalid payload", http.StatusBadRequest)
 		return
 	}
 
 	ctx := r.Context()
-	ex, err := h.Repo.GetExerciseByID(ctx, req.ExerciseID)
+	ex, err := h.Repo.GetExerciseByID(ctx, req.Id)
 	if err != nil {
 		if errors.Is(err, pgx.ErrNoRows) {
-			log.Printf("[SubmitCloze] NOT_FOUND exercise_id=%s dur=%s", req.ExerciseID, time.Since(start))
+			log.Printf("[SubmitCloze] NOT_FOUND exercise_id=%s dur=%s", req.Id, time.Since(start))
 			http.Error(w, "exercise not found", http.StatusNotFound)
 			return
 		}
-		log.Printf("[SubmitCloze] DB_ERR exercise_id=%s err=%v", req.ExerciseID, err)
+		log.Printf("[SubmitCloze] DB_ERR exercise_id=%s err=%v", req.Id, err)
 		http.Error(w, "db error", http.StatusInternalServerError)
 		return
 	}

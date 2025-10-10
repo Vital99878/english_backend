@@ -2,7 +2,7 @@ package models
 
 type ClozeBlank struct {
 	ID     string   `json:"id"`
-	Accept []string `json:"accept"`
+	Accept []string `json:"answers"`
 }
 
 type ClozePayload struct {
